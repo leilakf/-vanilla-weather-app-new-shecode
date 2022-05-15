@@ -43,14 +43,20 @@ iconElement.setAttribute(
        };
       //  iconElement.setAttribute("alt",data.weather[0].description);
 
-       
-       
- 
+function search (city){
  let apikey = "65ebacab223e28df9f44762d8e4c4d11";
- let city="paris"
-       
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
- console.log(apiUrl)
- 
 
-        axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function handelsubmit(event){
+  event.preventDefault();
+  let cityInputeElement=document.querySelector("#city-input");
+  search(cityInputeElement.value);
+}
+
+search("rasht");
+
+let form=document.querySelector("#serch-form");
+form.addEventListener("submit",handelsubmit);

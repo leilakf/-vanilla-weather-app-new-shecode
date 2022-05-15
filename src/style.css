@@ -44,7 +44,7 @@ li:first-letter{
         border: 1px solid #d9d9d9;
     border-radius: 10px;
     }
-    
+
    .weather-app-name{
         max-width: 600px;
         margin:0px auto;
@@ -79,3 +79,21 @@ top:-34px
 font-size:12px ;
 
     }
+
+.joind{
+    position: relative;
+}
+.joind  .serch{
+
+    position: absolute;
+    right: 3px;
+    top: 5px;
+    border-radius:20px;
+    color: #878787;
+    border-color:rgb(171, 170, 175);
+  
+   
+}
+.serch{
+width: 80px;
+}
