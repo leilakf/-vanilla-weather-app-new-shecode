@@ -3,10 +3,10 @@ body{
     font-family: "Google Sans", Roboto, arial, sans-serif;
     
 }
-
 a{
     text-decoration: none;
 }
+
 h1{
     color:#878787;
     font-size:24px;
@@ -96,4 +96,12 @@ font-size:12px ;
 }
 .serch{
 width: 80px;
+}
+.weather-temperature .active{
+    color: rgb(32, 33, 36);
+    cursor:default;
+}
+.weather-temperature .active:hover{
+    text-decoration: none;
+
 }

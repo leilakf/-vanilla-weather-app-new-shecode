@@ -29,6 +29,9 @@ return`${day} ${hours}:${minutes}`;
    let dateElement=document.querySelector("#date");
    let iconElement=document.querySelector("#icon");
 
+
+   celsiusTemperature=response.data.main.temp;
+
    temperatureElement.innerHTML=Math.round
    (response.data.main.temp);
    cityElement.innerHTML=response.data.name;
@@ -56,7 +59,41 @@ function handelsubmit(event){
   search(cityInputeElement.value);
 }
 
-search("rasht");
+function displayFahrenheitTemperature(event){
+  event.preventDefault();
+
+  Celsiuslink.classList.remove("active");
+  fahrenheitlink.classList.add("active");
+  let FahrenheitTemperature = Math.round(( celsiusTemperature* 9/ 5) + 32);
+  let temperatureElement=document.querySelector("#temperature");
+  
+  temperatureElement.innerHTML=FahrenheitTemperature;
+}
+
+function displayCelsiusTemperature(event){
+  event.preventDefault();
+
+Celsiuslink.classList.add("active");
+fahrenheitlink.classList.remove("active");
+
+
+  let temperatureElement=document.querySelector("#temperature");
+ temperatureElement.innerHTML=Math.round(celsiusTemperature) ;
+
+}
+
+
+
+let celsiusTemperature=null;
 
 let form=document.querySelector("#serch-form");
 form.addEventListener("submit",handelsubmit);
+
+let fahrenheitlink=document.querySelector("#fahrenheit-link");
+fahrenheitlink.addEventListener("click",displayFahrenheitTemperature);
+
+let Celsiuslink=document.querySelector("#Celsius-link");
+Celsiuslink.addEventListener("click",displayCelsiusTemperature);
+
+search("rasht");
+
