@@ -1,10 +1,5 @@
  
  
- 
- 
- let apikey = "65ebacab223e28df9f44762d8e4c4d11";
-       
- let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apikey}&units=metric`;
      
  function displayTemperature(response){   
    let temperatureElement=document.querySelector("#temperature");
@@ -21,5 +16,11 @@
     ( response.data.wind.speed);
 
        }
+       
+ 
+ let apikey = "65ebacab223e28df9f44762d8e4c4d11";
+       
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apikey}&units=metric`;
+ 
 
         axios.get(apiUrl).then(displayTemperature);
